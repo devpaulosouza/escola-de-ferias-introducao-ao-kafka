@@ -1,0 +1,15 @@
+server.port: 8003
+
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
+      bindings:
+        input:
+          binder: kafka
+          destination: despesa
+          group: input-group-1

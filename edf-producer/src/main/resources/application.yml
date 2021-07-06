@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          autoAddPartitions: true
+          brokers:
+            - localhost:9092
+      bindings:
+        output:
+          destination: despesa
+          group: output-group-1
+          producer:
+            partitionCount: 2
+
+server.port: 8001
